@@ -1,7 +1,7 @@
 package me.juan.learning.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.ToString;
 
 import java.util.ArrayList;
@@ -9,16 +9,10 @@ import java.util.List;
 
 @Data
 @ToString
+@AllArgsConstructor
 public class User {
 
-    @Getter
-    @ToString.Exclude
-    private static final List<User> users = new ArrayList<>();
-    private final List<Account> accounts = new ArrayList<>();
     private String name;
+    private final List<Account> accounts = new ArrayList<>();
 
-    public User(String name) {
-        this.name = name;
-        users.add(this);
-    }
 }

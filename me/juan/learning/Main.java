@@ -15,7 +15,7 @@ public class Main {
         Account userAccount = new Account(user, 100.0, AccountStatus.ACTIVE);
         user.getAccounts().add(userAccount);
 
-        Transaction transaction = new Transaction(userAccount, 1100.0);
+        Transaction transaction = new Transaction(userAccount, 50.0);
 
         System.out.println(transaction);
 

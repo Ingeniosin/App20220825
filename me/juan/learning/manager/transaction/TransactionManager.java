@@ -7,7 +7,6 @@ import me.juan.learning.manager.Manager;
 import me.juan.learning.manager.TransactionResponse;
 import me.juan.learning.validator.Validator;
 
-import java.util.Date;
 import java.util.stream.Collectors;
 
 public class TransactionManager implements Manager<Transaction> {
@@ -30,6 +29,9 @@ public class TransactionManager implements Manager<Transaction> {
 
         Account account = model.getAccount();
         account.setBalance(account.getBalance() - model.getAmount());
+
+        History transactionSuccess = new History("Transaction succeeded", "Transaction succeeded successfully, " + model.getAmount() + " was debited from the account");
+        model.getHistories().add(transactionSuccess);
 
         return transactionResponse;
     }
